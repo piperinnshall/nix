@@ -8,6 +8,6 @@
   [
 
     jdk23
-    gradle_7-unwrapped
+    gradle_8
   ];
 }
