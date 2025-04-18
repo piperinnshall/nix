@@ -53,7 +53,6 @@
                     ./home-manager/modules/editorconfig.nix
                     ./home-manager/modules/bat.nix
                     ./home-manager/modules/fzf.nix
-                    ./home-manager/modules/lsp.nix
                     ./home-manager/modules/java.nix
                 ];
               };
