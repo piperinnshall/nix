@@ -1,3 +1,3 @@
-# Nix
+# ❄️ Nix
 
-❄️ My Nix Dot Files
+My [Nix](https://nixos.org/) Dot Files
