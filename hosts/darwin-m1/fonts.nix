@@ -4,7 +4,7 @@
 }:
 {
   fonts.packages =
-  [
-    pkgs.nerd-fonts.martian-mono
-  ];
+    [
+      pkgs.nerd-fonts.martian-mono
+    ];
 }

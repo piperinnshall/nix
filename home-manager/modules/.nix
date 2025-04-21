@@ -3,8 +3,9 @@
   ...
 }:
 {
+
   home.packages = with pkgs;
     [
-      firefox-unwrapped
+      gradle_8
     ];
 }

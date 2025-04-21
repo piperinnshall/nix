@@ -3,8 +3,8 @@
   ...
 }:
 let
-nvimDotfiles = config.lib.file.mkOutOfStoreSymlink
-"/etc/nix-darwin/home-manager/configs/nvim";
+  nvimDotfiles = config.lib.file.mkOutOfStoreSymlink
+  "/etc/nix-darwin/home-manager/configs/nvim";
 in
 {
   programs.neovim = {

@@ -1,7 +1,6 @@
 {
   ...
 }:
-
 {
   editorconfig = {
     enable = true;

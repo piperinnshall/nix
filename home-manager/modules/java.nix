@@ -5,9 +5,8 @@
 {
 
   home.packages = with pkgs;
-  [
-
-    jdk23
-    gradle_8
-  ];
+    [
+      jdk23
+      gradle_8
+    ];
 }
