@@ -11,6 +11,7 @@
     extraConfig = {
       commit.gpgSign  = true;
       tag.gpgSign     = true;
+      core.editor     = "vim";
     };
   };
 }
