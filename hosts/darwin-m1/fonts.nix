@@ -3,8 +3,8 @@
   ...
 }:
 {
-  fonts.packages =
+  fonts.packages = with pkgs;
     [
-      pkgs.nerd-fonts.martian-mono
+      nerd-fonts.martian-mono
     ];
 }

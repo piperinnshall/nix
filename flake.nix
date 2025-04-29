@@ -34,7 +34,6 @@
           attrValues (rec {
             defaults      = import ./hosts/darwin-m1/defaults.nix;
             fonts         = import ./hosts/darwin-m1/fonts.nix;
-            apps          = import ./hosts/darwin-m1/apps.nix;
           })
           ++ [
             ./hosts/darwin-m1/configuration.nix
@@ -50,7 +49,6 @@
                     ./home-manager/modules/home-manager.nix
                     ./home-manager/modules/firefox.nix
                     ./home-manager/modules/aerospace.nix
-                    ./home-manager/modules/raycast.nix
 
                     # Development
                     ./home-manager/modules/neovim.nix
@@ -66,6 +64,10 @@
                     ./home-manager/modules/bat.nix
                     ./home-manager/modules/fzf.nix
                     ./home-manager/modules/git.nix
+
+                    # MacOS
+                    ./home-manager/modules/raycast.nix
+                    ./home-manager/modules/mas.nix
                   ];
               };
             }
