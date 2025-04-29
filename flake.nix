@@ -34,6 +34,7 @@
           attrValues (rec {
             defaults      = import ./hosts/darwin-m1/defaults.nix;
             fonts         = import ./hosts/darwin-m1/fonts.nix;
+            apps          = import ./hosts/darwin-m1/apps.nix;
           })
           ++ [
             ./hosts/darwin-m1/configuration.nix
