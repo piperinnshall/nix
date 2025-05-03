@@ -64,6 +64,7 @@
                     ./home-manager/modules/bat.nix
                     ./home-manager/modules/fzf.nix
                     ./home-manager/modules/git.nix
+                    ./home-manager/modules/gpg.nix
 
                     # MacOS
                     ./home-manager/modules/raycast.nix

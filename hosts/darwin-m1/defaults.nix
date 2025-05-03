@@ -5,7 +5,7 @@
     finder.AppleShowAllExtensions = true;
     finder.FXPreferredViewStyle = "clmv";
     loginwindow.LoginwindowText = "Nix Darwin";
-    screencapture.location = "~/Pictures/Screenshots";
+    screencapture.location = "~/Pictures";
   };
 
   # Enable touch id authorisation for sudo
