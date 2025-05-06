@@ -6,10 +6,18 @@
 {
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  nix.settings.trusted-users =
-    [
-      "piperinnshall"
-    ];
+  nix.settings = {
+    trusted-users =
+      [
+        "piperinnshall"
+      ];
+
+    experimental-features =
+      [
+        "nix-command"
+        "flakes"
+      ];
+  };
 
   programs.fish.enable = true;
   environment.variables.SHELL = "${pkgs.fish}/bin/fish";

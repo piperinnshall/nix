@@ -58,6 +58,7 @@
 
                     # Programming Languages
                     ./home-manager/modules/java.nix
+                    ./home-manager/modules/python.nix
 
                     # Command Line Interface
                     ./home-manager/modules/fish.nix

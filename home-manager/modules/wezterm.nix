@@ -4,7 +4,7 @@
 }:
 let
   weztermDotFiles = config.lib.file.mkOutOfStoreSymlink
-  "/etc/nix-darwin/home-manager/configs/wezterm";
+    "/etc/nix-darwin/home-manager/configs/wezterm";
 in
 {
   programs.wezterm = {
