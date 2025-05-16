@@ -11,6 +11,10 @@
   programs.fish = {
     enable = true;
 
+    interactiveShellInit = ''
+set -U fish_key_bindings fish_vi_key_bindings
+    '';
+
     functions = {
       fdir = {
         body = ''
@@ -24,8 +28,7 @@ end
 
     shellAliases = {
       cat = "${pkgs.bat}/bin/bat";
-      vim = "nvim";
-      vi = "vim";
+      vi = "nvim";
       fzf = ''fzf --preview 'bat --style=numbers --color=always {}' '';
     };
   };

@@ -58,6 +58,7 @@
 
                     # Programming Languages
                     ./home-manager/modules/java.nix
+                    ./home-manager/modules/javascript.nix
                     ./home-manager/modules/python.nix
 
                     # Command Line Interface
