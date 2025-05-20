@@ -68,6 +68,7 @@
                     ./home-manager/modules/git.nix
                     ./home-manager/modules/gpg.nix
                     ./home-manager/modules/hyfetch.nix
+                    ./home-manager/modules/eza.nix
 
                     # MacOS
                     ./home-manager/modules/raycast.nix

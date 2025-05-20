@@ -18,7 +18,7 @@ set -U fish_key_bindings fish_vi_key_bindings
     functions = {
       fdir = {
         body = ''
-set dir (fzf --preview="ls -la --color=always {}" --walker=dir)
+set dir (fzf --preview="eza -all --show-symlinks --icons always {}" --walker=dir)
 if test -n "$dir"
   cd "$dir"
 end
@@ -30,6 +30,10 @@ end
       cat = "${pkgs.bat}/bin/bat";
       vi = "nvim";
       fzf = ''fzf --preview 'bat --style=numbers --color=always {}' '';
+      fetch = "hyfetch";
+      ls = "eza --icons always";
+      la = "eza -all --show-symlinks --icons always";
+      tree = "eza --show-symlinks --icons always --tree";
     };
   };
 
