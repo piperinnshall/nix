@@ -71,6 +71,7 @@
                     ./home-manager/modules/fastfetch.nix
                     ./home-manager/modules/eza.nix
                     ./home-manager/modules/ripgrep.nix
+                    ./home-manager/modules/epy.nix
 
                     # MacOS
                     ./home-manager/modules/raycast.nix
