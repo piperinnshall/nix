@@ -69,6 +69,7 @@
                     ./home-manager/modules/gpg.nix
                     ./home-manager/modules/hyfetch.nix
                     ./home-manager/modules/eza.nix
+                    ./home-manager/modules/ripgrep.nix
 
                     # MacOS
                     ./home-manager/modules/raycast.nix

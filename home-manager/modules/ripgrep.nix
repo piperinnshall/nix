@@ -2,8 +2,7 @@
   ...
 }:
 {
-  programs.ripgrep= {
-    enabled = true;
+  programs.ripgrep = {
+    enable = true;
   };
 }
-
