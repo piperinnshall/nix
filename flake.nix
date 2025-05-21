@@ -60,6 +60,7 @@
                     ./home-manager/modules/java.nix
                     ./home-manager/modules/javascript.nix
                     ./home-manager/modules/python.nix
+                    ./home-manager/modules/rust.nix
 
                     # Command Line Interface
                     ./home-manager/modules/fish.nix

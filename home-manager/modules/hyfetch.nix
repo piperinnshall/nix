@@ -15,7 +15,7 @@
     "light_dark": "light",
     "lightness": 1.0,
     "color_align": {
-        "mode": "horizontal",
+        "mode": "vertical",
         "custom_colors": [],
         "fore_back": null
     },
