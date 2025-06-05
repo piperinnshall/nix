@@ -62,6 +62,7 @@
               homebrew.casks = [
                 "roblox"
                 "godot"
+                "hammerspoon"
               ];
               homebrew.masApps = {
                 "IWallPaper"                        = 1552826194;
