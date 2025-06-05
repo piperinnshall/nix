@@ -3,11 +3,6 @@
   ...
 }:
 {
-  home.packages = with pkgs;
-    [
-      oh-my-fish
-    ];
-
   programs.fish = {
     enable = true;
 
@@ -36,8 +31,4 @@ end
       tree = "eza --show-symlinks --icons always --tree";
     };
   };
-
-  xdg.configFile."omf/theme".text = ''
-bobthefish
-  '';
 }

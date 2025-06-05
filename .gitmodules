@@ -1,6 +1,3 @@
 [submodule "home-manager/configs/nvim"]
 	path = home-manager/configs/nvim
-	url = https://github.com/piperinnshall/nvim
-[submodule "home-manager/configs/wezterm"]
-	path = home-manager/configs/wezterm
-	url = https://github.com/piperinnshall/wezterm
+	url = https://github.com/piperinnshall/nvim.git

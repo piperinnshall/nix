@@ -6,39 +6,66 @@
       url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     };
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/master";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
     };
   };
 
   outputs = inputs@{
     self,
-    nixpkgs,
     nix-darwin,
+    nixpkgs,
+    nix-homebrew,
+    homebrew-bundle,
+    homebrew-core,
+    homebrew-cask,
     home-manager,
-    ...
   }:
-  let
-    inherit (nixpkgs.lib) attrValues;
-  in
   {
     darwinConfigurations."Pipers-MacBook-Pro" =
       nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = { inherit self; };
         modules =
-          attrValues (rec {
-            defaults      = import ./hosts/darwin-m1/defaults.nix;
-            fonts         = import ./hosts/darwin-m1/fonts.nix;
-          })
-          ++ [
-            ./hosts/darwin-m1/configuration.nix
+          [
+            ./hosts/aarch64-darwin/fonts.nix
+            ./hosts/aarch64-darwin/configuration.nix
             home-manager.darwinModules.home-manager
+            nix-homebrew.darwinModules.nix-homebrew
             {
+              nix-homebrew.enable                   = true;
+              nix-homebrew.enableRosetta            = true;
+              nix-homebrew.user                     = "piperinnshall";
+              nix-homebrew.mutableTaps              = false;
+              nix-homebrew.taps = {
+                "homebrew/homebrew-core"            = homebrew-core;
+                "homebrew/homebrew-cask"            = homebrew-cask;
+              };
+              homebrew.enable                       = true;
+              homebrew.casks = [
+                "roblox"
+                "godot"
+              ];
+              homebrew.masApps = {
+                "IWallPaper"                        = 1552826194;
+              };
               users.users.piperinnshall.home        = "/Users/piperinnshall";
               home-manager.useGlobalPkgs            = true;
               home-manager.useUserPackages          = true;
@@ -47,36 +74,20 @@
                   [
                     # General
                     ./home-manager/modules/home-manager.nix
-                    ./home-manager/modules/firefox.nix
-                    ./home-manager/modules/aerospace.nix
+                    ./home-manager/modules/window.nix
 
-                    # Development
-                    ./home-manager/modules/neovim.nix
-                    ./home-manager/modules/editorconfig.nix
-                    ./home-manager/modules/wezterm.nix
-                    ./home-manager/modules/godot.nix
+                    # Development Environment
+                    ./home-manager/modules/editor.nix
+                    ./home-manager/modules/terminal.nix
+                    ./home-manager/modules/languages.nix
 
-                    # Programming Languages
-                    ./home-manager/modules/java.nix
-                    ./home-manager/modules/javascript.nix
-                    ./home-manager/modules/python.nix
-                    ./home-manager/modules/rust.nix
+                    # Command-Line Interface
+                    ./home-manager/modules/shell.nix
+                    ./home-manager/modules/cli.nix
 
-                    # Command Line Interface
-                    ./home-manager/modules/fish.nix
-                    ./home-manager/modules/bat.nix
-                    ./home-manager/modules/fzf.nix
-                    ./home-manager/modules/git.nix
-                    ./home-manager/modules/gpg.nix
-                    ./home-manager/modules/hyfetch.nix
-                    ./home-manager/modules/fastfetch.nix
-                    ./home-manager/modules/eza.nix
-                    ./home-manager/modules/ripgrep.nix
-                    ./home-manager/modules/epy.nix
-
-                    # MacOS
-                    ./home-manager/modules/raycast.nix
-                    ./home-manager/modules/mas.nix
+                    # Applications
+                    ./home-manager/modules/browser.nix
+                    ./home-manager/modules/macos.nix
                   ];
               };
             }
