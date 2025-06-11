@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   ...
 }:
 let
@@ -12,6 +13,13 @@ in
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    extraPackages = with pkgs;
+      [
+        llvmPackages_20.clang-unwrapped
+        lua-language-server
+        nil
+        rust-analyzer
+      ];
   };
 
   xdg.configFile."nvim".source = nvimDotfiles;
