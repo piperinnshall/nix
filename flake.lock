@@ -141,6 +141,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1738142207,
+        "narHash": "sha256-NGqpVVxNAHwIicXpgaVqJEJWeyqzoQJ9oc8lnK9+WC4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9d3ae807ebd2981d593cddd0080856873139aa40",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -149,7 +165,26 @@
         "homebrew-core": "homebrew-core",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "zen-browser": "zen-browser"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1749589188,
+        "narHash": "sha256-Zkkb4VkrwyFNaqsaqzt5oE3I9ixGg44TR2Scmaey7pE=",
+        "owner": "conneroisu",
+        "repo": "zen-browser-flake",
+        "rev": "1602d202349c9ba28ed0594478a04afec4150d03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "conneroisu",
+        "repo": "zen-browser-flake",
+        "type": "github"
       }
     }
   },

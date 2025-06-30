@@ -1,8 +1,4 @@
 {
-  pkgs,
-  ...
-}:
-{
   services.jankyborders = {
     enable = false;
 

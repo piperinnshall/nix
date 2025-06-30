@@ -1,7 +1,3 @@
-{
-  pkgs,
-  ...
-}:
 let
   tokyonight = builtins.fetchGit {
     url = "https://github.com/folke/tokyonight.nvim.git";
@@ -10,12 +6,10 @@ let
 in
 {
   programs = {
-    bat.enable          = true;
     eza.enable          = true;
     fastfetch.enable    = true;
     fd.enable           = true;
     fzf.enable          = true;
-    git.enable          = true;
     gpg.enable          = true;
     ripgrep.enable      = true;
     hyfetch = {
@@ -33,6 +27,7 @@ in
       };
     };
     git = {
+      enable            = true;
       userName          = "piperinnshall";
       userEmail         = "piper.innshall@gmail.com";
       signing.key       = "65C0F3D84E581744";
@@ -47,6 +42,7 @@ in
       };
     };
     bat = {
+      enable            = true;
       config.theme      = "tokyo";
       themes.tokyo.src  = "${tokyonight}/extras/sublime/tokyonight_day.tmTheme";
     };

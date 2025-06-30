@@ -28,6 +28,9 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    zen-browser = {
+      url = "github:conneroisu/zen-browser-flake";
+    };
   };
 
   outputs = inputs@{
@@ -39,6 +42,7 @@
     homebrew-core,
     homebrew-cask,
     home-manager,
+    zen-browser,
   }:
   {
     darwinConfigurations."Pipers-MacBook-Pro" =
@@ -47,8 +51,8 @@
           [
             ./hosts/aarch64-darwin/fonts.nix
             ./hosts/aarch64-darwin/configuration.nix
-            home-manager.darwinModules.home-manager
             nix-homebrew.darwinModules.nix-homebrew
+            home-manager.darwinModules.home-manager
             {
               nix-homebrew.enable                   = true;
               nix-homebrew.enableRosetta            = true;
@@ -63,6 +67,7 @@
                 "roblox"
                 "godot"
                 "hammerspoon"
+                "steam"
               ];
               homebrew.masApps = {
                 "IWallPaper"                        = 1552826194;
@@ -90,6 +95,9 @@
                     ./home-manager/modules/browser.nix
                     ./home-manager/modules/macos.nix
                   ];
+              };
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
               };
             }
           ];

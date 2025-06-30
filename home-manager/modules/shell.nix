@@ -1,8 +1,4 @@
 {
-  pkgs,
-  ...
-}:
-{
   programs.fish = {
     enable = true;
 
@@ -22,13 +18,12 @@ end
     };
 
     shellAliases = {
-      cat = "${pkgs.bat}/bin/bat";
-      vi = "nvim";
+      cat = "bat -p";
       fzf = ''fzf --preview 'bat --style=numbers --color=always {}' '';
       fetch = "hyfetch";
-      ls = "eza --icons always";
-      la = "eza -all --show-symlinks --icons always";
-      tree = "eza --show-symlinks --icons always --tree";
+      ls = "eza";
+      la = "eza --all --show-symlinks --icons always -l";
+      tree = "eza --all --show-symlinks --icons always --tree";
     };
   };
 }

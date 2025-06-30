@@ -41,6 +41,13 @@
     screencapture.location = "~/Pictures";
   };
 
-  # Enable touch id authorisation for sudo
+  power.sleep = {
+    computer = "never";
+    display = "never";
+    harddisk = "never";
+    allowSleepByPowerButton = true;
+  };
+
+# Enable touch id authorisation for sudo
   security.pam.services.sudo_local.touchIdAuth = true;
 }
