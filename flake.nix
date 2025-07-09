@@ -63,10 +63,12 @@
                 "homebrew/homebrew-cask"            = homebrew-cask;
               };
               homebrew.enable                       = true;
+              homebrew.brews = [
+                "jdtls"
+              ];
               homebrew.casks = [
                 "roblox"
                 "godot"
-                "hammerspoon"
                 "steam"
               ];
               homebrew.masApps = {

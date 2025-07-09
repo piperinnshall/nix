@@ -44,7 +44,7 @@ in
     bat = {
       enable            = true;
       config.theme      = "tokyo";
-      themes.tokyo.src  = "${tokyonight}/extras/sublime/tokyonight_day.tmTheme";
+      themes.tokyo.src  = "${tokyonight}/extras/sublime/tokyonight_moon.tmTheme";
     };
   };
 }

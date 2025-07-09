@@ -28,7 +28,7 @@ in
         };
         size = 13.0;
       };
-      general.import = [ "${tokyonight}/extras/alacritty/tokyonight_day.toml" ];
+      general.import = [ "${tokyonight}/extras/alacritty/tokyonight_moon.toml" ];
     };
   };
 }
