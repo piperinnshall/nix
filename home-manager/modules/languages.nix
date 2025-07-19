@@ -5,9 +5,8 @@
 {
   home.packages = with pkgs;
     [
-      nodejs_23
-      python312Packages.conda
       rustup
+      nodejs_22
     ];
 
   programs = {

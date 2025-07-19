@@ -14,12 +14,11 @@ in
     settings = {
       terminal = {
         shell = {
-          program = "${pkgs.fish}/bin/fish";
+          program = "${pkgs.bash}/bin/bash";
         };
       };
       window = {
         decorations = "none";
-        opacity = 0.5;
       };
       font = {
         normal = {
@@ -28,7 +27,7 @@ in
         };
         size = 13.0;
       };
-      general.import = [ "${tokyonight}/extras/alacritty/tokyonight_moon.toml" ];
+      general.import = [ "${tokyonight}/extras/alacritty/tokyonight_day.toml" ];
     };
   };
 }

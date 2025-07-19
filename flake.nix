@@ -70,6 +70,8 @@
                 "roblox"
                 "godot"
                 "steam"
+                "miniconda"
+                "wine-stable"
               ];
               homebrew.masApps = {
                 "IWallPaper"                        = 1552826194;
