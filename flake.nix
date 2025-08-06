@@ -31,6 +31,9 @@
     zen-browser = {
       url = "github:conneroisu/zen-browser-flake";
     };
+    neovim-nightly = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
   };
 
   outputs = inputs@{
@@ -43,68 +46,66 @@
     homebrew-cask,
     home-manager,
     zen-browser,
+    neovim-nightly,
   }:
   {
     darwinConfigurations."Pipers-MacBook-Pro" =
-      nix-darwin.lib.darwinSystem {
-        modules =
-          [
-            ./hosts/aarch64-darwin/fonts.nix
-            ./hosts/aarch64-darwin/configuration.nix
-            nix-homebrew.darwinModules.nix-homebrew
-            home-manager.darwinModules.home-manager
-            {
-              nix-homebrew.enable                   = true;
-              nix-homebrew.enableRosetta            = true;
-              nix-homebrew.user                     = "piperinnshall";
-              nix-homebrew.mutableTaps              = false;
-              nix-homebrew.taps = {
-                "homebrew/homebrew-core"            = homebrew-core;
-                "homebrew/homebrew-cask"            = homebrew-cask;
-              };
-              homebrew.enable                       = true;
-              homebrew.brews = [
-                "jdtls"
-              ];
-              homebrew.casks = [
-                "roblox"
-                "godot"
-                "steam"
-                "miniconda"
-                "wine-stable"
-              ];
-              homebrew.masApps = {
-                "IWallPaper"                        = 1552826194;
-              };
-              users.users.piperinnshall.home        = "/Users/piperinnshall";
-              home-manager.useGlobalPkgs            = true;
-              home-manager.useUserPackages          = true;
-              home-manager.users.piperinnshall = {
-                imports =
-                  [
-                    # General
-                    ./home-manager/modules/home-manager.nix
-                    ./home-manager/modules/window.nix
-
-                    # Development Environment
-                    ./home-manager/modules/editor.nix
-                    ./home-manager/modules/terminal.nix
-                    ./home-manager/modules/languages.nix
-
-                    # Command-Line Interface
-                    ./home-manager/modules/shell.nix
-                    ./home-manager/modules/cli.nix
-
-                    # Applications
-                    ./home-manager/modules/browser.nix
-                    ./home-manager/modules/macos.nix
-                  ];
-              };
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
-            }
+    nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [
+        ./hosts/aarch64-darwin/configuration.nix
+        nix-homebrew.darwinModules.nix-homebrew
+        home-manager.darwinModules.home-manager
+        {
+          nix-homebrew.enable = true;
+          nix-homebrew.enableRosetta = true;
+          nix-homebrew.user = "piperinnshall";
+          nix-homebrew.mutableTaps = false;
+          nix-homebrew.taps = {
+            "homebrew/homebrew-core" = homebrew-core;
+            "homebrew/homebrew-cask" = homebrew-cask;
+          };
+          homebrew.enable = true;
+          homebrew.brews = [
+            "jdtls"
           ];
-      };
+          homebrew.casks = [
+            "roblox"
+            "godot"
+            "steam"
+            "miniconda"
+          ];
+          homebrew.masApps = {
+            "IWallPaper" = 1552826194;
+          };
+          users.users.piperinnshall.home = "/Users/piperinnshall";
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {
+            inherit inputs;
+          };
+          home-manager.users.piperinnshall = {
+            imports = [
+              # General
+              ./home-manager/modules/home-manager.nix
+              ./home-manager/modules/window.nix
+
+              # Development Environment
+              ./home-manager/modules/editor.nix
+              ./home-manager/modules/terminal.nix
+              ./home-manager/modules/languages.nix
+
+              # Command-Line Interface
+              ./home-manager/modules/shell.nix
+              ./home-manager/modules/cli.nix
+
+              # Applications
+              ./home-manager/modules/browser.nix
+              ./home-manager/modules/macos.nix
+            ];
+          };
+        }
+      ];
+    };
   };
 }

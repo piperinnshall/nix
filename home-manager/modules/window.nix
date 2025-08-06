@@ -1,14 +1,12 @@
 {
   services.jankyborders = {
     enable = false;
-
     settings = {
       active_color = "0xffc0c0c0";
       inactive_color = "0xff232323";
       width = 7.0;
     };
   };
-
   programs.aerospace = {
     enable = true;
     userSettings = {
@@ -22,7 +20,6 @@
       default-root-container-orientation = "auto";
       key-mapping.preset = "qwerty";
       on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
-
       gaps = {
         inner = {
           horizontal = 0;
@@ -35,7 +32,6 @@
           bottom = 0;
         };
       };
-
       mode = {
         main = {
           binding = {
@@ -84,7 +80,6 @@
             "alt-shift-semicolon" = "mode service";
           };
         };
-
         service = {
           binding = {
             "esc" = [ "reload-config" "mode main" ];

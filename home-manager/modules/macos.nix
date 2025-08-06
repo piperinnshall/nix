@@ -3,12 +3,11 @@
     ...
 }:
 {
-  home.packages = with pkgs;
-    [
-      raycast
-      mas
-      prismlauncher
-      vlc-bin
-    ];
+  home.packages = with pkgs; [
+    raycast
+    mas
+    prismlauncher
+    vlc-bin
+  ];
 }
 

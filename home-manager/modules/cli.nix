@@ -12,6 +12,16 @@ in
     fzf.enable          = true;
     gpg.enable          = true;
     ripgrep.enable      = true;
+    pandoc.enable       = true;
+    texlive = {
+      enable            = true;
+      extraPackages     = tpkgs: {
+        inherit (tpkgs)
+          collection-basic
+          collection-latex
+          collection-latexrecommended;
+      };
+    };
     hyfetch = {
       enable            = true;
       settings = {
@@ -35,7 +45,7 @@ in
       extraConfig = {
         commit.gpgSign  = true;
         tag.gpgSign     = true;
-        core.editor     = "vim";
+        core.editor     = "nvim";
         init = {
           defaultBranch = "main";
         };
@@ -44,7 +54,7 @@ in
     bat = {
       enable            = true;
       config.theme      = "tokyo";
-      themes.tokyo.src  = "${tokyonight}/extras/sublime/tokyonight_moon.tmTheme";
+      themes.tokyo.src  = "${tokyonight}/extras/sublime/tokyonight_day.tmTheme";
     };
   };
 }

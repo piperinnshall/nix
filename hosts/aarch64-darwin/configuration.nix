@@ -28,8 +28,6 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
   nixpkgs.config.allowUnfree = true;
 
-  programs.fish.enable = true;
-
   system.defaults = {
     dock.autohide = true;
     dock.mru-spaces = false;
@@ -48,6 +46,21 @@
     allowSleepByPowerButton = true;
   };
 
-# Enable touch id authorisation for sudo
+  # Enable touch id authorization for super user
   security.pam.services.sudo_local.touchIdAuth = true;
+
+  # Download Font
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    source-sans-pro
+    source-sans
+    roboto
+    font-awesome
+  ];
+
+  # Set Login Shell
+  programs.bash.enable = true;
+  users.users.piperinnshall.shell = pkgs.bashInteractive;
+  environment.variables.SHELL = "${pkgs.bashInteractive}/bin/bash";
 }
+

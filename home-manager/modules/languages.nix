@@ -3,11 +3,12 @@
   ...
 }:
 {
-  home.packages = with pkgs;
-    [
-      rustup
-      nodejs_22
-    ];
+  home.packages = with pkgs; [
+    rustup
+    nodejs_22
+    typst
+    typstyle
+  ];
 
   programs = {
     java = {

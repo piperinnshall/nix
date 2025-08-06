@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   pkgs,
   ...
@@ -9,13 +10,14 @@ let
 in
 {
   programs.neovim = {
-    enable       = true;
-    viAlias      = true;
-    vimdiffAlias = true;
+    enable        = true;
+    package = inputs.neovim-nightly.packages.${pkgs.system}.default;
+    viAlias       = true;
+    vimdiffAlias  = true;
     extraPackages = with pkgs; [
       lua-language-server
-      rust-analyzer
-      nil
+        rust-analyzer
+        nil
     ];
   };
 

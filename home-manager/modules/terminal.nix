@@ -3,9 +3,9 @@
   ...
 }:
 let
-tokyonight = builtins.fetchGit {
-  url = "https://github.com/folke/tokyonight.nvim.git";
-  rev = "057ef5d260c1931f1dffd0f052c685dcd14100a3";
+melange = builtins.fetchGit {
+  url = "https://github.com/savq/melange-nvim.git";
+  rev = "ce42f6b629beeaa00591ba73a77d3eeac4cf28ce";
 };
 in
 {
@@ -27,7 +27,7 @@ in
         };
         size = 13.0;
       };
-      general.import = [ "${tokyonight}/extras/alacritty/tokyonight_day.toml" ];
+      general.import = [ "${melange}/term/alacritty/melange_light.toml" ];
     };
   };
 }

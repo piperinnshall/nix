@@ -4,9 +4,7 @@
   ...
 }:
 {
-  home.packages = with pkgs;
-    [
-      # firefox-unwrapped
-      inputs.zen-browser.packages.${pkgs.system}.default
-    ];
+  home.packages = [
+    inputs.zen-browser.packages.${pkgs.system}.default
+  ];
 }
