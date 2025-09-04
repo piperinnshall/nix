@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+      url = "github:NixOS/nixpkgs/25.05";
     };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
@@ -75,9 +75,6 @@
             "steam"
             "miniconda"
           ];
-          homebrew.masApps = {
-            "IWallPaper" = 1552826194;
-          };
           users.users.piperinnshall.home = "/Users/piperinnshall";
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;

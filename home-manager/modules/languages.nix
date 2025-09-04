@@ -8,12 +8,13 @@
     nodejs_22
     typst
     typstyle
+    cmake
   ];
 
   programs = {
     java = {
       enable = true;
-      package = pkgs.jdk23;
+      package = pkgs.jdk24;
     };
     gradle = {
       enable = true;

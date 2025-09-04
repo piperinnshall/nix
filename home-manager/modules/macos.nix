@@ -8,6 +8,7 @@
     mas
     prismlauncher
     vlc-bin
+    skimpdf
   ];
 }
 
