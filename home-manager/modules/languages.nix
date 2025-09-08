@@ -9,6 +9,7 @@
     typst
     typstyle
     cmake
+    python313Packages.pip
   ];
 
   programs = {

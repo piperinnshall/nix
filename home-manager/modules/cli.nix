@@ -13,6 +13,7 @@ in
     gpg.enable          = true;
     ripgrep.enable      = true;
     pandoc.enable       = true;
+    thefuck.enable      = true;
     texlive = {
       enable            = true;
       extraPackages     = tpkgs: {
@@ -44,15 +45,14 @@ in
     };
     tmux = {
       enable = true;
+      terminal = "tmux-256color";
       keyMode = "vi";
       baseIndex = 1;
       escapeTime = 0;
       extraConfig = ''
-        set -g renumber-windows on
+        set -ga terminal-overrides ',xterm-256color:Tc'
 
-        set -g terminal-overrides ",xterm*:sitm=\e[3m:ritm=\e[23m"
-        set -sa terminal-features ',xterm-256color:RGB'
-        set -a terminal-features 'screen-256color:RGB'
+        set -g renumber-windows on
         set -g allow-passthrough on
 
         bind r source-file ~/.config/tmux/tmux.conf
