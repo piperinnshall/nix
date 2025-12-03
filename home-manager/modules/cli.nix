@@ -25,7 +25,7 @@ in
     };
     git = {
       enable            = true;
-      userName          = "piperinnshall";
+      userName          = "Piper Inns Hall";
       userEmail         = "piper.innshall@gmail.com";
       signing.key       = "65C0F3D84E581744";
       signing.format    = "openpgp";

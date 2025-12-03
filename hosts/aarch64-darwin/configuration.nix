@@ -56,6 +56,10 @@
     source-sans
     roboto
     font-awesome
+    noto-fonts
+    noto-fonts-extra
+    fira-mono
+    iosevka
   ];
 
   # Set Login Shell

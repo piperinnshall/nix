@@ -74,6 +74,7 @@
             "godot"
             "steam"
             "miniconda"
+            "wine-stable"
           ];
           users.users.piperinnshall.home = "/Users/piperinnshall";
           home-manager.useGlobalPkgs = true;

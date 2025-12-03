@@ -8,7 +8,9 @@
     mas
     prismlauncher
     vlc-bin
-    skimpdf
+    zathura
+    discord
+    ninja
   ];
 }
 

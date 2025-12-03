@@ -10,6 +10,7 @@
     typstyle
     cmake
     python313Packages.pip
+    haskell.compiler.native-bignum.ghcHEAD
   ];
 
   programs = {
