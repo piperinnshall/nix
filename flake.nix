@@ -76,6 +76,9 @@
             "miniconda"
             "graalvm-jdk@17"
           ];
+          homebrew.masApps = {
+            MyWallpaper = 1552826194;
+          };
           users.users.piperinnshall.home = "/Users/piperinnshall";
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
