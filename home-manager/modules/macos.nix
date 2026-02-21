@@ -11,6 +11,8 @@
     zathura
     discord
     ninja
+    spotify
+    xld
   ];
 }
 

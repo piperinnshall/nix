@@ -74,8 +74,6 @@
             "godot"
             "steam"
             "miniconda"
-            "wine-stable"
-            "processing"
             "graalvm-jdk@17"
           ];
           users.users.piperinnshall.home = "/Users/piperinnshall";
