@@ -1,47 +1,29 @@
-let
-tokyonight = builtins.fetchGit {
-  url = "https://github.com/folke/tokyonight.nvim.git";
-  rev = "057ef5d260c1931f1dffd0f052c685dcd14100a3";
-};
-in
 {
   programs = {
-    eza.enable          = true;
-    fastfetch.enable    = true;
-    fd.enable           = true;
-    fzf.enable          = true;
-    gpg.enable          = true;
-    ripgrep.enable      = true;
-    pandoc.enable       = true;
-    thefuck.enable      = true;
-    texlive = {
-      enable            = true;
-      extraPackages     = tpkgs: {
-        inherit (tpkgs)
-          collection-basic
-          collection-latex
-          collection-latexrecommended;
-      };
-    };
+    eza.enable = true;
+    fastfetch.enable = true;
+    fd.enable = true;
+    fzf.enable = true;
+    gpg.enable = true;
+    ripgrep.enable = true;
     git = {
-      enable            = true;
-      userName          = "Piper Inns Hall";
-      userEmail         = "piper.innshall@gmail.com";
-      signing.key       = "65C0F3D84E581744";
-      signing.format    = "openpgp";
-      extraConfig = {
-        commit.gpgSign  = true;
-        tag.gpgSign     = true;
-        core.editor     = "nvim";
+      enable = true;
+      settings = {
+        user.name = "Piper Inns Hall";
+        user.email = "piper.innshall@gmail.com";
+        commit.gpgSign = true;
+        tag.gpgSign = true;
+        core.editor = "nvim";
         init = {
           defaultBranch = "main";
         };
       };
+      signing.key = "65C0F3D84E581744";
+      signing.format = "openpgp";
     };
     bat = {
-      enable            = true;
-      config.theme      = "tokyo";
-      themes.tokyo.src  = "${tokyonight}/extras/sublime/tokyonight_day.tmTheme";
+      enable = true;
+      config.theme = "OneHalfLight";
     };
     tmux = {
       enable = true;
@@ -86,4 +68,3 @@ in
     };
   };
 }
-

@@ -10,13 +10,12 @@
     typstyle
     cmake
     python313Packages.pip
-    haskell.compiler.native-bignum.ghcHEAD
   ];
 
   programs = {
     java = {
       enable = true;
-      package = pkgs.jdk24;
+      package = pkgs.jdk25;
     };
     gradle = {
       enable = true;

@@ -57,7 +57,6 @@
     roboto
     font-awesome
     noto-fonts
-    noto-fonts-extra
     fira-mono
     iosevka
   ];
