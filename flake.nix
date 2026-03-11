@@ -29,6 +29,7 @@
     };
     zen-browser = {
       url = "github:conneroisu/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-nightly = {
       url = "github:nix-community/neovim-nightly-overlay";
@@ -73,7 +74,6 @@
               "godot"
               "steam"
               "miniconda"
-              "graalvm-jdk@17"
             ];
             users.users.piperinnshall.home = "/Users/piperinnshall";
             home-manager.useGlobalPkgs = true;
