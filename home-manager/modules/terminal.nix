@@ -12,6 +12,9 @@
           program = "${pkgs.bash}/bin/bash";
         };
       };
+      env = {
+        TERM = "alacritty";
+      };
       window = {
         decorations = "none";
       };

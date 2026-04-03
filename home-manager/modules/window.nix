@@ -1,18 +1,10 @@
 {
-  services.jankyborders = {
-    enable = false;
-    settings = {
-      active_color = "0xffc0c0c0";
-      inactive_color = "0xff232323";
-      width = 7.0;
-    };
-  };
   programs.aerospace = {
     enable = true;
     userSettings = {
       start-at-login = true;
-      after-login-command = [];
-      after-startup-command = [];
+      after-login-command = [ ];
+      after-startup-command = [ ];
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
       accordion-padding = 0;
@@ -82,19 +74,42 @@
         };
         service = {
           binding = {
-            "esc" = [ "reload-config" "mode main" ];
-            "r" = [ "flatten-workspace-tree" "mode main" ];
-            "f" = [ "layout floating tiling" "mode main" ];
-            "backspace" = [ "close-all-windows-but-current" "mode main" ];
+            "esc" = [
+              "reload-config"
+              "mode main"
+            ];
+            "r" = [
+              "flatten-workspace-tree"
+              "mode main"
+            ];
+            "f" = [
+              "layout floating tiling"
+              "mode main"
+            ];
+            "backspace" = [
+              "close-all-windows-but-current"
+              "mode main"
+            ];
 
-            "alt-shift-h" = [ "join-with left" "mode main" ];
-            "alt-shift-j" = [ "join-with down" "mode main" ];
-            "alt-shift-k" = [ "join-with up" "mode main" ];
-            "alt-shift-l" = [ "join-with right" "mode main" ];
+            "alt-shift-h" = [
+              "join-with left"
+              "mode main"
+            ];
+            "alt-shift-j" = [
+              "join-with down"
+              "mode main"
+            ];
+            "alt-shift-k" = [
+              "join-with up"
+              "mode main"
+            ];
+            "alt-shift-l" = [
+              "join-with right"
+              "mode main"
+            ];
           };
         };
       };
     };
   };
 }
-

@@ -12,6 +12,14 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:conneroisu/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    neovim-nightly = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
@@ -27,27 +35,20 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    zen-browser = {
-      url = "github:conneroisu/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    neovim-nightly = {
-      url = "github:nix-community/neovim-nightly-overlay";
-    };
   };
 
   outputs =
     inputs@{
       self,
-      nix-darwin,
       nixpkgs,
+      nix-darwin,
+      home-manager,
+      zen-browser,
+      neovim-nightly,
       nix-homebrew,
       homebrew-bundle,
       homebrew-core,
       homebrew-cask,
-      home-manager,
-      zen-browser,
-      neovim-nightly,
     }:
     {
       darwinConfigurations."Pipers-MacBook-Pro" = nix-darwin.lib.darwinSystem {
@@ -66,9 +67,6 @@
               "homebrew/homebrew-cask" = homebrew-cask;
             };
             homebrew.enable = true;
-            homebrew.brews = [
-              "jdtls"
-            ];
             homebrew.casks = [
               "roblox"
               "godot"

@@ -1,7 +1,11 @@
 {
+  inputs,
+  ...
+}:
+{
   programs = {
-    eza.enable = true;
     fastfetch.enable = true;
+    eza.enable = true;
     fd.enable = true;
     fzf.enable = true;
     gpg.enable = true;
@@ -13,26 +17,27 @@
         user.email = "piper.innshall@gmail.com";
         commit.gpgSign = true;
         tag.gpgSign = true;
-        core.editor = "nvim";
+        core.editor = "vim";
         init = {
           defaultBranch = "main";
         };
       };
+      ignores = [
+        "tags"
+        ".DS_Store"
+      ];
       signing.key = "65C0F3D84E581744";
       signing.format = "openpgp";
     };
-    bat = {
-      enable = true;
-      config.theme = "OneHalfLight";
-    };
     tmux = {
       enable = true;
-      terminal = "tmux-256color";
+      terminal = "alacritty";
       keyMode = "vi";
       baseIndex = 1;
       escapeTime = 0;
       extraConfig = ''
-        set -ga terminal-overrides ',xterm-256color:Tc'
+        set -ga terminal-overrides ',alacritty:Tc'
+        set -as terminal-overrides ',alacritty:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'
 
         set -g renumber-windows on
         set -g allow-passthrough on
@@ -50,7 +55,8 @@
         set -g status-right-length 0
 
         setw -g window-status-current-style 'fg=colour6 bg=default bold'
-        setw -g window-status-current-format '#I:#W '
+        setw -g window-status-current-format '#W '
+        setw -g window-status-format '#W '
         setw -g window-status-style 'fg=colour8'
 
         bind h select-pane -L
@@ -62,8 +68,6 @@
         bind -r J swap-pane -D
         bind -r K swap-pane -U
         bind -r L swap-pane -D
-
-        bind ^ last-window
       '';
     };
   };

@@ -59,6 +59,8 @@
     noto-fonts
     fira-mono
     iosevka
+    tex-gyre.cursor
+  tex-gyre.termes
   ];
 
   # Set Login Shell
@@ -66,4 +68,3 @@
   users.users.piperinnshall.shell = pkgs.bashInteractive;
   environment.variables.SHELL = "${pkgs.bashInteractive}/bin/bash";
 }
-

@@ -5,19 +5,9 @@
   ...
 }:
 let
-  nvimDotfiles = config.lib.file.mkOutOfStoreSymlink
-    "/etc/nix-darwin/home-manager/configs/nvim";
+  vimDotfiles = config.lib.file.mkOutOfStoreSymlink "/etc/nix-darwin/home-manager/configs/vim";
 in
 {
-  programs.neovim = {
-    enable = true;
-    package = inputs.neovim-nightly.packages.${pkgs.system}.default;
-    extraPackages = with pkgs; [
-      lua-language-server
-      rust-analyzer
-      nil
-    ];
-  };
-
-  xdg.configFile."nvim".source = nvimDotfiles;
+  home.packages = [ pkgs.vim ];
+  home.file.".vim".source = vimDotfiles;
 }
