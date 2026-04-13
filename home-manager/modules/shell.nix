@@ -6,6 +6,7 @@
       fzf = ''fzf --preview 'cat {}' '';
       ls = "ls --color=auto";
       la = "ls -lah --color=auto";
+      ll = "ls -l --color=auto";
       tree = "eza  --color=auto --tree";
     };
     initExtra = ''

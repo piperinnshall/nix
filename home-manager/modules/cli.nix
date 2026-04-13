@@ -1,4 +1,5 @@
 {
+  pkgs,
   inputs,
   ...
 }:
@@ -35,6 +36,9 @@
       keyMode = "vi";
       baseIndex = 1;
       escapeTime = 0;
+      plugins = [
+        pkgs.tmuxPlugins.resurrect
+      ];
       extraConfig = ''
         set -ga terminal-overrides ',alacritty:Tc'
         set -as terminal-overrides ',alacritty:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'
@@ -68,6 +72,8 @@
         bind -r J swap-pane -D
         bind -r K swap-pane -U
         bind -r L swap-pane -D
+
+        bind c new-window -c ~
       '';
     };
   };
