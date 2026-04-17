@@ -81,6 +81,7 @@
               "godot"
               "steam"
               "miniconda"
+              "krita"
             ];
             users.users.piperinnshall.home = "/Users/piperinnshall";
             home-manager.useGlobalPkgs = true;
