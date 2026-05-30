@@ -5,12 +5,9 @@
 {
   home.packages = with pkgs; [
     raycast
-    vlc-bin
-    zathura
     discord
-    ninja
     xld
-    flac
+    orbstack
   ];
 }
 # killall XLD 2>/dev/null

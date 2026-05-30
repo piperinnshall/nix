@@ -35,10 +35,6 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    arthur-ficial-tap = {
-      url = "github:Arthur-Ficial/homebrew-tap";
-      flake = false;
-    };
   };
 
   outputs =
@@ -53,7 +49,6 @@
       homebrew-bundle,
       homebrew-core,
       homebrew-cask,
-      arthur-ficial-tap,
     }:
     {
       darwinConfigurations."Pipers-MacBook-Pro" = nix-darwin.lib.darwinSystem {
@@ -70,11 +65,9 @@
             nix-homebrew.taps = {
               "homebrew/homebrew-core" = homebrew-core;
               "homebrew/homebrew-cask" = homebrew-cask;
-              "arthur-ficial/homebrew-tap" = arthur-ficial-tap;
             };
             homebrew.enable = true;
             homebrew.brews = [
-              "arthur-ficial/homebrew-tap/apfel"
             ];
             homebrew.casks = [
               "roblox"
@@ -82,6 +75,7 @@
               "steam"
               "miniconda"
               "krita"
+              "displaylink"
             ];
             users.users.piperinnshall.home = "/Users/piperinnshall";
             home-manager.useGlobalPkgs = true;

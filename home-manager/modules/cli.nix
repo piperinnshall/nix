@@ -4,6 +4,11 @@
   ...
 }:
 {
+  home.packages = with pkgs; [
+    universal-ctags
+    ninja
+    zathura
+  ];
   programs = {
     fastfetch.enable = true;
     eza.enable = true;

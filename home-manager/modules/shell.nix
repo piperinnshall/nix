@@ -3,11 +3,14 @@
     enable = true;
     enableCompletion = true;
     shellAliases = {
+      dev = "cd ~/Developer";
+      doc = "cd ~/Documents";
       fzf = ''fzf --preview 'cat {}' '';
       ls = "ls --color=auto";
       la = "ls -lah --color=auto";
       ll = "ls -l --color=auto";
       tree = "eza  --color=auto --tree";
+      fearless = "~/Developer/Java/Fearless/StandardLibrary/fearlessArtefact/fearless.app/Contents/MacOS/fearless";
     };
     initExtra = ''
       export PS1=" ❯ "

@@ -12,7 +12,6 @@
     python313Packages.pip
     google-java-format
     nixfmt-rfc-style
-    universal-ctags
   ];
 
   programs = {
