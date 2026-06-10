@@ -37,6 +37,7 @@
     };
     tmux = {
       enable = true;
+      shell = "${pkgs.bashInteractive}/bin/bash";
       terminal = "alacritty";
       keyMode = "vi";
       baseIndex = 1;
@@ -47,6 +48,9 @@
       extraConfig = ''
         set -ga terminal-overrides ',alacritty:Tc'
         set -as terminal-overrides ',alacritty:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'
+
+        set -g default-command "${pkgs.bash}/bin/bash"
+        set -g default-shell ${pkgs.bashInteractive}/bin/bash
 
         set -g renumber-windows on
         set -g allow-passthrough on

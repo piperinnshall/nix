@@ -15,6 +15,9 @@
   ];
 
   programs = {
+    gcc = { 
+      enable = true; 
+    };
     java = {
       enable = true;
       package = pkgs.jdk25;

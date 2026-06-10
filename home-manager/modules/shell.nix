@@ -5,6 +5,7 @@
     shellAliases = {
       dev = "cd ~/Developer";
       doc = "cd ~/Documents";
+      nix = "cd /etc/nix-darwin";
       fzf = ''fzf --preview 'cat {}' '';
       ls = "ls --color=auto";
       la = "ls -lah --color=auto";

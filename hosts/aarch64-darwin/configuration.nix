@@ -9,6 +9,8 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
 
+  nix.enable = true;
+
   # Necessary for using flakes on this system.
   nix.settings = {
     experimental-features = "nix-command flakes";
@@ -60,11 +62,10 @@
     fira-mono
     iosevka
     tex-gyre.cursor
-  tex-gyre.termes
+    tex-gyre.termes
   ];
 
   # Set Login Shell
   programs.bash.enable = true;
   users.users.piperinnshall.shell = pkgs.bashInteractive;
-  environment.variables.SHELL = "${pkgs.bashInteractive}/bin/bash";
 }

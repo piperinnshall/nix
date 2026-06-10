@@ -10,6 +10,7 @@
       terminal = {
         shell = {
           program = "${pkgs.bash}/bin/bash";
+          args = [ "-l" ];
         };
       };
       env = {
