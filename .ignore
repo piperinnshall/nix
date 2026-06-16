@@ -1,3 +1,4 @@
-pack/
-view/
-undodir/
+pack
+view
+undodir
+result

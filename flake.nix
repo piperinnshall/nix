@@ -68,6 +68,7 @@
             };
             homebrew.enable = true;
             homebrew.brews = [
+              "ollama"
             ];
             homebrew.casks = [
               "roblox"

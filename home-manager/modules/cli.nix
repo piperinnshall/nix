@@ -8,6 +8,7 @@
     universal-ctags
     ninja
     zathura
+    git-lfs
   ];
   programs = {
     fastfetch.enable = true;

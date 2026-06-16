@@ -10,11 +10,11 @@
       terminal = {
         shell = {
           program = "${pkgs.bash}/bin/bash";
-          args = [ "-l" ];
         };
       };
       env = {
         TERM = "alacritty";
+        SHELL = "${pkgs.bashInteractive}/bin/bash";
       };
       window = {
         decorations = "none";
