@@ -1,13 +1,11 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
   home.packages = with pkgs; [
     universal-ctags
     ninja
-    zathura
     git-lfs
   ];
   programs = {

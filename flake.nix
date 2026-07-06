@@ -2,22 +2,14 @@
   description = "nix-darwin system flake";
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/25.11";
+      url = "github:NixOS/nixpkgs/26.05";
     };
     nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/nix-darwin-25.11";
+      url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    zen-browser = {
-      url = "github:conneroisu/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    neovim-nightly = {
-      url = "github:nix-community/neovim-nightly-overlay";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew = {
@@ -43,8 +35,6 @@
       nixpkgs,
       nix-darwin,
       home-manager,
-      zen-browser,
-      neovim-nightly,
       nix-homebrew,
       homebrew-bundle,
       homebrew-core,
@@ -71,6 +61,7 @@
               "ollama"
             ];
             homebrew.casks = [
+              "zen"
               "roblox"
               "godot"
               "steam"
@@ -100,7 +91,7 @@
                 ./home-manager/modules/cli.nix
 
                 # Applications
-                ./home-manager/modules/browser.nix
+                ./home-manager/modules/applications.nix
                 ./home-manager/modules/macos.nix
               ];
             };

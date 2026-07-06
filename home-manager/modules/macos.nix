@@ -5,7 +5,6 @@
 {
   home.packages = with pkgs; [
     raycast
-    discord
     xld
     orbstack
   ];
