@@ -4,6 +4,7 @@
 }:
 {
   home.packages = with pkgs; [
+    python3
     rustup
     nodejs_22
     typst
@@ -11,13 +12,10 @@
     cmake
     python313Packages.pip
     google-java-format
-    nixfmt-rfc-style
+    nixfmt
   ];
 
   programs = {
-    gcc = { 
-      enable = true; 
-    };
     java = {
       enable = true;
       package = pkgs.jdk25;

@@ -3,6 +3,7 @@
     enable = true;
     enableCompletion = true;
     shellAliases = {
+      vuw = "cd ~/Documents/Notes/VUW2026";
       dev = "cd ~/Developer";
       doc = "cd ~/Documents";
       nix = "cd /etc/nix-darwin";

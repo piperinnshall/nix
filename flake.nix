@@ -57,17 +57,21 @@
               "homebrew/homebrew-cask" = homebrew-cask;
             };
             homebrew.enable = true;
-            homebrew.brews = [
-              "ollama"
-            ];
+            homebrew.brews = [];
             homebrew.casks = [
               "zen"
               "roblox"
-              "godot"
               "steam"
               "miniconda"
               "krita"
+              "blender"
+              "godot"
+              "discord"
+              "unity"
+              "unity-hub"
+              "vlc"
               "displaylink"
+              "spotify"
             ];
             users.users.piperinnshall.home = "/Users/piperinnshall";
             home-manager.useGlobalPkgs = true;

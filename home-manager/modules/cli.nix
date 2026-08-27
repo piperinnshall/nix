@@ -5,8 +5,8 @@
 {
   home.packages = with pkgs; [
     universal-ctags
-    ninja
     git-lfs
+    openssl
   ];
   programs = {
     fastfetch.enable = true;
